@@ -1,0 +1,19 @@
+.plan {
+    cursor: pointer;
+}
+
+.plan:hover {
+    transform: scale(1.1);
+}
+
+.plan .h5 {
+    font-weight: 600;
+    color: grey;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .plan:hover {
+        transform: scale(1);
+    }
+}

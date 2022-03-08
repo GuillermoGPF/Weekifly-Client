@@ -1,0 +1,28 @@
+.footer {
+    width: 100%;
+    position: fixed;
+    padding: 0.5em 0;
+    bottom: 0;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+}
+
+.footer a {
+    color: #ff6347;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 500ms ease-in-out;
+}
+
+.footer a:hover {
+    color: #b14634;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        display: flex;
+    }
+}

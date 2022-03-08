@@ -1,0 +1,21 @@
+.friend {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    cursor: pointer;
+    border-left: 5px solid #ff6347;
+}
+
+.friend .h5 {
+    font-weight: 600;
+    color: grey;
+    text-align: center;
+}
+
+.friend img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}

@@ -1,0 +1,372 @@
+/* Generals */
+.App {
+    font-family: 'Poppins', 'calibri', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6347;
+    border-radius: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    color: grey;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 0.7em;
+    color: grey;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+input,
+button {
+    outline: none;
+    box-shadow: none!important;
+    border: none;
+}
+
+
+/* Containers */
+.home {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.home a {
+    font-size: 0.9em;
+    color: #ff6347;
+    margin: 0.5em auto;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home a:hover {
+    color: #b14634;
+}
+
+.container {
+    margin: 6em auto;
+}
+
+
+/* Forms */
+form {
+ padding: 0 1em;
+}
+
+form p {
+    text-align: center;
+    margin: 1em auto;
+	font-size: 1.2em;
+    color: grey;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none!important;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #ff6347;
+    transition: all 700ms ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #b14634;
+}
+
+label {
+	font-size: 0.8em;
+    color: grey;
+    font-weight: 600;
+}
+
+
+/* Buttons */
+button[type="submit"] {
+    width: 100%;
+}
+
+.btn,
+.btn:focus {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ff6347;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    margin: 1em auto;
+    outline: none;
+    box-shadow: none!important;
+    border: none;
+    font-size: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+
+.btn:hover {
+    background-color: #b14634;
+    color: #fff;
+}
+
+.button,
+.button:focus {
+    background: none;
+    font-size: 1.5em;
+    margin: 0 0.3em;
+    color: #ff6347;
+    text-align: center;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+
+.button:hover,
+.button.active {
+    background: none;
+    color: #b14634;
+}
+
+.button p,
+a p {
+    font-size: 0.5em;
+    font-weight: 700;
+    color: grey;
+    text-align: center;
+}
+
+.back {
+    background: none;
+    color: #ff6347;
+    font-size: 1.2em;
+}
+
+.edit {
+    background: none;
+    color: #ff6347;
+    font-size: 3em;
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+
+.back:hover,
+.edit:hover {
+    background: none;
+    color: #b14634;
+}
+
+/* Avatars */
+.avatars {
+    margin: 1em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.avatar img {
+    height: 100px;
+}
+
+.avatar.selected,
+.avatar:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.contact {
+    margin: 1em;
+    padding: 0.3em 1em;
+    background-color: #fff;
+    border: 2px solid #ff6347;
+    border-radius: 0 2em 0 2em;
+    color: grey;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease-in-out;
+}
+
+.contact img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.contact:hover {
+    border-color: #b14634;
+    color: #b14634;
+}
+
+/* Form */
+.formSearch {
+    width: 50%;
+    color: #4EACCE;
+    border-radius: 50px;
+    background-color: #fff;
+    border: solid 2px #4EACCE;
+    padding: 0 1em;
+    margin: 1em auto;
+}
+
+.formSearch input {
+    width: 90%;
+    padding: 0.6em;
+    border: none;
+    color: grey;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .formSearch  {
+        width: 90%;
+    }
+}
+
+
+/* Cards */
+.card {
+    margin: 1em auto;
+    border: none;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+    background-color: #fff;
+    transition: all 500ms ease-in-out;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.homeCard {
+    margin: 1rem auto;
+    overflow: auto;
+    height: 400px;
+}
+
+.homeCard::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.profile h3 {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plans img {
+    width: 80%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+@media (max-width: 768px) {
+    .profile img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .plans img {
+        width: 100%;
+    }
+}
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFound h2 {
+    font-size: 10em;
+}
+
+.notFound h3 {
+    font-size: 4em;
+}
+
+.rocket {
+    color: #ff6347;
+    text-align: center;
+    font-size: 6em;
+    position: absolute;
+    animation: launch 3s infinite;
+    left: 20%;
+}
+
+@keyframes launch {
+    0%   {bottom: -100px;}
+    100% {bottom: 100%; left: 60%;}
+}

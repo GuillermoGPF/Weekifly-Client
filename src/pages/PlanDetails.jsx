@@ -7,12 +7,12 @@ import Navbar from '../components/Navbar/Navbar'
 import MyModal from '../components/MyModal/MyModal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faTrashCan, faSatelliteDish } from '@fortawesome/free-solid-svg-icons'
-import { MessageContext } from '../context/userMessage.context'
-import { useContext } from 'react/cjs/react.development'
+// import { MessageContext } from '../context/userMessage.context'
+// import { useContext } from 'react/cjs/react.development'
 
 
 function PlanDetails() {
-    const { setMessageInfo, setShowMessage } = useContext(MessageContext)
+    // const { setMessageInfo, setShowMessage } = useContext(MessageContext)
     const [plansDetails, setPlansDetails] = useState({})
     const { plan_id } = useParams()
 
@@ -28,9 +28,9 @@ function PlanDetails() {
     const deletePlans = () => {
         planService
                    .deletePlan(plan_id)
-                   .then( () => {
-                        setShowMessage(true)
-                        setMessageInfo({ desc: 'Plan eliminado' })
+                   .then(() => {
+                        // setShowMessage(true)
+                        // setMessageInfo({ desc: 'Plan eliminado' })
                         navigate('/inicio')
                    })
                    .catch(err => console.log(err))

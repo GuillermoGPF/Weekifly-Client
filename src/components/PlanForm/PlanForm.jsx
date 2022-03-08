@@ -16,7 +16,7 @@ const PlanForm = ({ refreshPlans }) => {
     })
 
     const [loadingImage, setLoadingImage] = useState(false)
-    const { name, description, image } = planData
+    const { name, description } = planData
     const navigate = useNavigate()
 
     const handleInputChange = e => {

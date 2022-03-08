@@ -1,4 +1,4 @@
-import { Navbar as NavigationBar, Nav, Image, Button } from 'react-bootstrap'
+import { Navbar as NavigationBar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

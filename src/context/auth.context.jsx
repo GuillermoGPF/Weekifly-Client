@@ -26,7 +26,7 @@ function AuthProviderWrapper(props) {
 
         if (!storedToken) {
             logOutUser()
-            // navigate('/')
+            navigate('/')
         } else {
             authService
                        .verify(storedToken)
@@ -40,14 +40,14 @@ function AuthProviderWrapper(props) {
         }
     }
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const logOutUser = () => {
         removeToken()
         setIsLoggedIn(false)
         setIsLoading(false)
         setUser(null)
-        // navigate('/')
+        navigate('/')
     }
 
     useEffect(() => authenticateUser(), [])

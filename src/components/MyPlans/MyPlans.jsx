@@ -1,4 +1,4 @@
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import PlanCard from '../PlanCard/PlanCard'
 
 

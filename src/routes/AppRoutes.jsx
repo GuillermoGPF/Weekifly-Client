@@ -9,6 +9,7 @@ import Users from '../pages/Users'
 import PlanDetails from '../pages/PlanDetails'
 import UserDetails from '../pages/UserDetails'
 import NotFound from '../pages/NotFound'
+import EditPlan from '../pages/EditPlan'
 import PrivateRoute from '../routes/PrivateRoute'
 
 const AppRoutes = () => {
@@ -25,6 +26,9 @@ const AppRoutes = () => {
             </Route>
             <Route path="/detalles-plan/:plan_id" element={<PrivateRoute />}>
                 <Route path="" element={<PlanDetails />} />
+            </Route>
+            <Route path='/editar-plan' element={<PrivateRoute />}>
+                <Route path='' element={<EditPlan />} />
             </Route>
             <Route path="/perfil" element={<PrivateRoute />}>
                 <Route path="" element={<Profile />} />

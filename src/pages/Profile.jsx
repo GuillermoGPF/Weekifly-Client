@@ -1,7 +1,6 @@
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import MyModal from '../components/MyModal/MyModal'
 import { AuthContext } from './../context/auth.context'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -15,7 +14,7 @@ const Profile = () => {
     return (
         <>
             <Navbar />
-            <Container>
+            <Container className='hero'>
                 <Link to="/ajustes">
                     <Button className='edit'>
                         <FontAwesomeIcon icon={faEdit} />
@@ -34,7 +33,6 @@ const Profile = () => {
                     </Col>
                 </Row>
             </Container>
-            <MyModal />
             <Footer />
         </>
     )

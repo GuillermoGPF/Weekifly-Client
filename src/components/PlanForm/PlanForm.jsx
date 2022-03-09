@@ -6,7 +6,7 @@ import uploadService from '../../services/upload.service'
 import { MessageContext } from '../../context/userMessage.context'
 
 
-const PlanForm = ({ refreshPlans }) => {
+const PlanForm = ({ closeModal, refreshPlans }) => {
     const { setShowMessage, setMessageInfo } = useContext(MessageContext)
 
     const [planData, setPlanData] = useState({
@@ -50,6 +50,7 @@ const PlanForm = ({ refreshPlans }) => {
                         setShowMessage(true)
                         setMessageInfo({ desc: 'Plan creado con éxito' })
                         refreshPlans()
+                        closeModal()
                         navigate('/planes')
                    })
                    .catch(err => console.log(err))

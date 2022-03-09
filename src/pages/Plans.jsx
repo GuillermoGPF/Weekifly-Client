@@ -1,7 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import MyModal from '../components/MyModal/MyModal'
 import PlansList from '../components/PlansList/PlansList'
 import SearchPlans from './../components/SearchPlans/SearchPlans'
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner'
@@ -23,14 +22,14 @@ const Plans = () => {
     }
 
     function filterPlans(str, filteredPlans) {
-        str ? filteredPlans = plansCopy.filter(elm => elm.name.includes(str)) : filteredPlans = setCopy
+        str ? filteredPlans = plansCopy.filter(elm => elm.name.includes(str)) : filteredPlans = plansCopy
         setPlans(filteredPlans)
     }
 
     return (
         <>
             <Navbar />
-            <Container>
+            <Container className='hero'>
                 <Row>
                     <Col>
                         <h2>Planes</h2>
@@ -39,7 +38,6 @@ const Plans = () => {
                 <SearchPlans filterPlans={filterPlans} />
                 {!plans.length ? <LoadingSpinner /> : <PlansList plans={plans} />}
             </Container>
-            <MyModal />
             <Footer />
         </>
     )

@@ -1,7 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import MyModal from '../components/MyModal/MyModal'
 import FriendsList from '../components/FriendsList/FriendsList'
 import SearchFriends from './../components/SearchFriends/SearchFriends'
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner'
@@ -30,7 +29,7 @@ const Users = () => {
     return (
         <>
             <Navbar />
-            <Container>
+            <Container className='hero'>
                 <Row>
                     <Col>
                         <h2>Amigos</h2>
@@ -39,7 +38,6 @@ const Users = () => {
                 <SearchFriends filterFriends={filterFriends} />
                 {!friends.length ? <LoadingSpinner /> : <FriendsList friends={friends} />}
             </Container>
-            <MyModal />
             <Footer />
         </>
     )

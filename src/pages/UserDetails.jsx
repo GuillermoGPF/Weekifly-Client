@@ -4,9 +4,8 @@ import { useParams, Link } from 'react-router-dom'
 import friendService from '../services/users.service'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import MyModal from '../components/MyModal/MyModal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faSatellite } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faSatellite, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 
 function UserDetails() {
@@ -23,7 +22,7 @@ function UserDetails() {
     return (
         <>
             <Navbar />
-            <Container>
+            <Container className='hero'>
                 <Link to="/amigos">
                     <Button className='back'>
                         <FontAwesomeIcon icon={faAngleLeft} /> Volver
@@ -41,13 +40,15 @@ function UserDetails() {
                         <p>{userDetails.birthday}</p>
                     </Col>
                 </Row>
-                <div className='d-flex justify-content-center align-items-center'>
+                <div className='d-flex justify-content-center align-items-center mt-5'>
+                    <Button>
+                        <FontAwesomeIcon icon={faTrashCan} /> Eliminar amigo
+                    </Button>
                     <Button>
                         <FontAwesomeIcon icon={faSatellite} /> Añadir amigo
                     </Button>
                 </div>
             </Container>
-            <MyModal />
             <Footer />
         </>
     )

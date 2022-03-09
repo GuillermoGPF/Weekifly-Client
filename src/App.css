@@ -74,9 +74,12 @@ button {
     color: #b14634;
 }
 
-.container {
-    margin: 3em auto;
-    padding-bottom: 2em;
+.home .container {
+    padding: 2em;
+}
+
+.hero {
+    margin: 5em auto;
 }
 
 
@@ -174,21 +177,41 @@ a p {
     background: none;
     color: #ff6347;
     font-size: 1.2em;
+    margin: 0;
 }
 
 .edit {
     background: none;
     color: #ff6347;
-    font-size: 3em;
-    position: absolute;
-    right: 0;
-    top: 50px;
+    font-size: 2.5em;
+    margin: 0;
 }
 
 .back:hover,
 .edit:hover {
     background: none;
     color: #b14634;
+}
+
+.back:focus {
+    background: none;
+    color: #b14634;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.edit:focus {
+    background: none;
+    color: #b14634;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.buttonsPlans {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em auto;
 }
 
 /* Avatars */
@@ -291,9 +314,8 @@ a p {
 }
 
 .homeCard {
-    margin: 1rem auto;
     overflow: auto;
-    height: 400px;
+    height: 390px;
 }
 
 .homeCard::-webkit-scrollbar {
@@ -305,7 +327,6 @@ a p {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .profile img {

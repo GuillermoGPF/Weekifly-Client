@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Brand from '../components/Brand/Brand'
 import Signup from '../components/Signup/Signup'
-import { Link } from 'react-router-dom'
 
 
 const SignupPage = () => {

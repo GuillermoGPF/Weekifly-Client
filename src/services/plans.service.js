@@ -6,7 +6,7 @@ class PlanService {
 
         this.api.interceptors.request.use((config) => {
 
-            const storedToken = localStorage.getItem("authToken");
+            const storedToken = localStorage.getItem('authToken')
         
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` }
@@ -28,8 +28,8 @@ class PlanService {
         return this.api.post(`/createPlan`, plan)
     }
 
-    putPlan = id => {
-        return this.api.put(`/editOnePlan/${id}/edit`)
+    putPlan = (id, plan) => {
+        return this.api.put(`/editOnePlan/${id}/edit`, plan)
     }
 
     deletePlan = id => {

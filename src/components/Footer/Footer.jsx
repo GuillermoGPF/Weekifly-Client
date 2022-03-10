@@ -11,7 +11,7 @@ import './Footer.css'
 const Footer = () => {
     const [plans, setPlans] = useState([])
 
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
 
     useEffect(() => loadPlans(), [])
 
@@ -22,26 +22,26 @@ const Footer = () => {
                    .catch(err => console.log(err))
     }
   
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
 
     return (
         <>
             <NavigationBar>
                 <Nav className='footer'>
-                    <NavLink to='/inicio' className={({ isActive }) => isActive ? "selected" : ""}>
+                    <NavLink to='/inicio' className={({ isActive }) => isActive ? 'selected' : ''}>
                         <FontAwesomeIcon icon={faHouse} /><p>Home</p>
                     </NavLink>
-                    <NavLink to='/planes' className={({ isActive }) => isActive ? "selected" : ""}>
+                    <NavLink to='/planes' className={({ isActive }) => isActive ? 'selected' : ''}>
                         <FontAwesomeIcon icon={faIcons} /><p>Planes</p>
                     </NavLink>
                     <Button className='button' onClick={handleShow}>
                         <FontAwesomeIcon icon={faPlus} /><p>Planear</p>
                     </Button>
-                    <NavLink to='/amigos' className={({ isActive }) => isActive ? "selected" : ""}>
+                    <NavLink to='/amigos' className={({ isActive }) => isActive ? 'selected' : ''}>
                         <FontAwesomeIcon icon={faUsers} /><p>Amigos</p>
                     </NavLink>
-                    <NavLink to='/perfil' className={({ isActive }) => isActive ? "selected" : ""}>
+                    <NavLink to='/perfil' className={({ isActive }) => isActive ? 'selected' : ''}>
                         <FontAwesomeIcon icon={faUserAstronaut} /><p>Perfil</p>
                     </NavLink>
                 </Nav>

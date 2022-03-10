@@ -1,7 +1,7 @@
 import { Button, Form } from 'react-bootstrap'
-import { useState, useContext } from "react"
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import authService from "../../services/auth.service"
+import authService from '../../services/auth.service'
 import { MessageContext } from '../../context/userMessage.context'
 
 
@@ -9,9 +9,9 @@ const Signup = () => {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
 
     const [signupForm, setSignupForm] = useState({
-        username: "",
-        password: "",
-        email: ""
+        username: '',
+        password: '',
+        email: ''
     })
 
     const navigate = useNavigate()

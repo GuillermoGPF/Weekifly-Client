@@ -30,7 +30,6 @@ const Login = () => {
         authService
                    .login(loginForm)
                    .then(({ data }) => {
-                       console.log("he entrado en auth service", data);
                         storeToken(data.authToken)
                         authenticateUser() 
                         setShowMessage(true)

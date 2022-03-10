@@ -1,6 +1,6 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react'
 
-const MessageContext = createContext();
+const MessageContext = createContext()
 
 function MessageProviderWrapper(props) {
     const [showMessage, setShowMessage] = useState(false)
@@ -13,4 +13,4 @@ function MessageProviderWrapper(props) {
     )
 }
 
-export { MessageContext, MessageProviderWrapper };
+export { MessageContext, MessageProviderWrapper }

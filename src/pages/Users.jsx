@@ -1,11 +1,13 @@
 import { Col, Container, Row } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
 import FriendsList from '../components/FriendsList/FriendsList'
 import SearchFriends from './../components/SearchFriends/SearchFriends'
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner'
+import PlanMessage from '../components/PlanMessage/PlanMessage'
 import friendService from '../services/users.service'
-import { useState, useEffect } from 'react'
+import { PlanMessageContext } from '../context/planMessage.context'
 
 
 const Users = () => {
@@ -17,12 +19,17 @@ const Users = () => {
     const loadFriends = () => {
         friendService
                      .getAllUsers()
-                     .then(({ data }) => setFriends(data))
+                     .then(({ data }) => {
+                         setFriends(data)
+                         setCopy(data)
+                     })
                      .catch(err => console.log(err))
     }
 
-    function filterFriends(str, filteredFriends) {
-        str ? filteredFriends = friendsCopy.filter(elm => elm.name.includes(str)) : filteredFriends = setCopy
+    function filterFriends(str) {
+        let filteredFriends
+        str ? filteredFriends = friendsCopy.filter(elm => elm.username.includes(str))
+            : filteredFriends = friendsCopy
         setFriends(filteredFriends)
     }
 
@@ -38,6 +45,7 @@ const Users = () => {
                 <SearchFriends filterFriends={filterFriends} />
                 {!friends.length ? <LoadingSpinner /> : <FriendsList friends={friends} />}
             </Container>
+            <PlanMessage />
             <Footer />
         </>
     )

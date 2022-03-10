@@ -11,11 +11,11 @@ import './Navbar.css'
 
 
 const Navbar = () => {
-    const [isActive, setActive] = useState(false);
+    const [isActive, setActive] = useState(false)
     const [plans, setPlans] = useState([])
     const { user } = useContext(AuthContext)
 
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
 
     useEffect(() => loadPlans(), [])
 
@@ -26,11 +26,11 @@ const Navbar = () => {
                    .catch(err => console.log(err))
     }
   
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
 
     const toggleClass = () => {
-        setActive(!isActive);
+        setActive(!isActive)
     }
 
     return (
@@ -54,22 +54,22 @@ const Navbar = () => {
             </NavigationBar>
 
             <div className={`menu ${isActive ? 'open' : ''}`}>
-                <NavLink to='/inicio' className={({ isActive }) => isActive ? "selected" : ""}>
+                <NavLink to='/inicio' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faHouse} /><p>Home</p>
                 </NavLink>
-                <NavLink to='/planes' className={({ isActive }) => isActive ? "selected" : ""}>
+                <NavLink to='/planes' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faIcons} /><p>Planes</p>
                 </NavLink>
                 <Button className='button' onClick={handleShow}>
                     <FontAwesomeIcon icon={faPlus} /><p>Planear</p>
                 </Button>
-                <NavLink to='/amigos' className={({ isActive }) => isActive ? "selected" : ""}>
+                <NavLink to='/amigos' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faUsers} /><p>Amigos</p>
                 </NavLink>
-                <NavLink to='/perfil' className={({ isActive }) => isActive ? "selected" : ""}>
+                <NavLink to='/perfil' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faUserAstronaut} /><p>Perfil</p>
                 </NavLink>
-                <NavLink to='/ajustes' className={({ isActive }) => isActive ? "selected" : ""}>
+                <NavLink to='/ajustes' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faCog} /><p>Ajustes</p>
                 </NavLink>
             </div>

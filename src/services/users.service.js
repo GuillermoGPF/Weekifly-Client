@@ -6,7 +6,7 @@ class UserService {
 
         this.api.interceptors.request.use((config) => {
 
-            const storedToken = localStorage.getItem("authToken");
+            const storedToken = localStorage.getItem('authToken')
         
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` }
@@ -28,12 +28,20 @@ class UserService {
         return this.api.post(`/createUser`, user)
     }
 
-    putUser = id => {
-        return this.api.put(`/editUser/${id}/edit`)
+    putUser = (id, user) => {
+        return this.api.put(`/editUser/${id}/edit`, user)
     }
 
     deleteUser = id => {
         return this.api.delete(`/deleteUser/${id}/delete`)
+    }
+
+    addFriend = id => {
+        return this.api.put(`/addFriend/${id}`)
+    }
+
+    deleteFriend = id => {
+        return this.api.delete(`/deleteFriend/${id}/delete`)
     }
 }
 

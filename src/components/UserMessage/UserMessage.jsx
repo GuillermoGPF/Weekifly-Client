@@ -11,7 +11,7 @@ const UserMessage = () => {
     return (
         <Toast onClose={() => setShowMessage(false)} show={showMessage} delay={3000} autohide>
             <Toast.Header>
-                <strong className="me-auto">{messageInfo.title}</strong>
+                <strong className='me-auto'>{messageInfo.title}</strong>
             </Toast.Header>
             <Toast.Body>{messageInfo.desc}</Toast.Body>
         </Toast>

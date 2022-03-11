@@ -3,12 +3,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useContext, useState, useEffect } from 'react'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import planService from '../services/plans.service'
 import uploadService from '../services/upload.service'
-// import { PlanMessageContext } from '../context/planMessage.context'
 import { MessageContext } from '../context/userMessage.context'
 
 
@@ -106,7 +104,6 @@ const EditPlan = () => {
                     </Col>
                 </Row>
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

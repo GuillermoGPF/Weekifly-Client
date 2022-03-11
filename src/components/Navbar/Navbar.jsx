@@ -60,9 +60,9 @@ const Navbar = () => {
                 <NavLink to='/planes' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faIcons} /><p>Planes</p>
                 </NavLink>
-                <Button className='button' onClick={handleShow}>
+                <NavLink to='' onClick={handleShow}>
                     <FontAwesomeIcon icon={faPlus} /><p>Planear</p>
-                </Button>
+                </NavLink>
                 <NavLink to='/amigos' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faUsers} /><p>Amigos</p>
                 </NavLink>
@@ -74,7 +74,7 @@ const Navbar = () => {
                 </NavLink>
             </div>
     
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton></Modal.Header>
                 <Modal.Body>
                     <PlanForm closeModal={handleClose} refreshPlans={loadPlans} />

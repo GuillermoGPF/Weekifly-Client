@@ -5,11 +5,9 @@ import Navbar from '../components/Navbar/Navbar'
 import MyPlans from '../components/MyPlans/MyPlans'
 import FriendCard from '../components/FriendCard/FriendCard'
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import friendService from '../services/users.service'
 import planService from '../services/plans.service'
 import { AuthContext } from '../context/auth.context'
-import { PlanMessageContext } from '../context/planMessage.context'
 
 
 const Home = () => {
@@ -78,7 +76,6 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

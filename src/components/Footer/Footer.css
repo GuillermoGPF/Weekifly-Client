@@ -22,6 +22,14 @@
     color: #b14634;
 }
 
+.addPlan {
+    border-radius: 50%;
+    border: solid 3px #ff6347;
+    padding: 0.6em;
+    background: #fff;
+    margin-top: -10%;
+}
+
 @media (max-width: 768px) {
     .footer {
         display: flex;

@@ -4,12 +4,10 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import planService from '../services/plans.service'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faTrashCan, faSatelliteDish, faEdit, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { MessageContext } from '../context/userMessage.context'
 import { AuthContext } from '../context/auth.context'
-import { PlanMessageContext } from '../context/planMessage.context'
 
 
 function PlanDetails() {
@@ -81,7 +79,6 @@ function PlanDetails() {
                     </Button>
                 </div>
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

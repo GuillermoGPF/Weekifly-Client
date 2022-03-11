@@ -5,9 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import PlansList from '../components/PlansList/PlansList'
 import SearchPlans from './../components/SearchPlans/SearchPlans'
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import planService from '../services/plans.service'
-import { PlanMessageContext } from '../context/planMessage.context'
 
 
 const Plans = () => {
@@ -45,7 +43,6 @@ const Plans = () => {
                 <SearchPlans filterPlans={filterPlans} />
                 {!plans.length ? <LoadingSpinner /> : <PlansList plans={plans} />}
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

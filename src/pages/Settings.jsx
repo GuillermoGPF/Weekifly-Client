@@ -3,14 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useContext, useState, useEffect } from 'react'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPowerOff, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import userService from '../services/users.service'
 import uploadService from '../services/upload.service'
 import { AuthContext } from './../context/auth.context'
 import { MessageContext } from '../context/userMessage.context'
-import { PlanMessageContext } from '../context/planMessage.context'
 
 
 const Settings = () => {
@@ -125,7 +123,6 @@ const Settings = () => {
                     </Col>
                 </Row>
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

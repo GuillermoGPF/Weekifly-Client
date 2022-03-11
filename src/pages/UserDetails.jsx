@@ -3,13 +3,11 @@ import { useState, useEffect, useContext } from 'react'
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faSatellite, faTrashCan, faEdit } from '@fortawesome/free-solid-svg-icons'
 import friendService from '../services/users.service'
 import { MessageContext } from '../context/userMessage.context'
 import { AuthContext } from '../context/auth.context'
-import { PlanMessageContext } from '../context/planMessage.context'
 
 
 function UserDetails() {
@@ -17,7 +15,7 @@ function UserDetails() {
     const { user } = useContext(AuthContext)
     const [userDetails, setUserDetails] = useState({})
     const { user_id } = useParams()
-const navigate = useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
         friendService
@@ -93,7 +91,6 @@ const navigate = useNavigate()
                     </div>
                 }
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

@@ -1,10 +1,8 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRocket } from '@fortawesome/free-solid-svg-icons'
-import { PlanMessageContext } from '../context/planMessage.context'
 
 
 const Settings = () => {
@@ -20,7 +18,6 @@ const Settings = () => {
                 </Row>
                 <FontAwesomeIcon className='rocket' icon={faRocket} />
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

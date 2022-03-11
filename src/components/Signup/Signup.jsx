@@ -11,7 +11,8 @@ const Signup = () => {
     const [signupForm, setSignupForm] = useState({
         username: '',
         password: '',
-        email: ''
+        email: '',
+        birthday: ''
     })
 
     const navigate = useNavigate()
@@ -27,13 +28,13 @@ const Signup = () => {
     function handleSubmit(e) {
         e.preventDefault()
         authService
-            .signup(signupForm)
-            .then(({ data }) => {
-                setShowMessage(true)
-                setMessageInfo({ desc: 'Te has registrado correctamente' })
-                navigate('/inicio')
-            })
-            .catch(err => console.log(err))
+                   .signup(signupForm)
+                   .then(({ data }) => {
+                        setShowMessage(true)
+                        setMessageInfo({ desc: 'Te has registrado correctamente' })
+                        navigate('/inicio')
+                   })
+                   .catch(err => console.log(err))
     }
 
     return (

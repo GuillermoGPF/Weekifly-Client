@@ -1,15 +1,11 @@
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import { PlanMessageContext } from '../../context/planMessage.context'
 import './PlanMessage.css'
 
 
 const PlanMessage = ({ name, _id }) => {
-    const { setShowMessage, showMessage } = useContext(PlanMessageContext)
-
     return (
-        <div className='planMessage' show={showMessage} delay={3000}>
+        <div className='planMessage'>
             <p>{name} quiere proponerte un plan</p>
             <div className='buttonsMessage'>
                 <Link to={`/detalles-plan/${_id}`}>
@@ -18,7 +14,7 @@ const PlanMessage = ({ name, _id }) => {
                     </Button>
                 </Link>
                 <Link to={''}>
-                    <Button onClick={() => setShowMessage(false)}>
+                    <Button>
                         Cancelar
                     </Button>
                 </Link>

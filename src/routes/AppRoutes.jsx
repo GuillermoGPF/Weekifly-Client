@@ -42,7 +42,7 @@ const AppRoutes = () => {
             <Route path='/detalles-amigo/:user_id' element={<PrivateRoute />}>
                 <Route path='' element={<UserDetails />} />
             </Route>
-            <Route path='*' element={<PrivateRoute />}>
+            <Route path='/404' element={<PrivateRoute />}>
                 <Route path='' element={<NotFound />} />
             </Route>
         </Routes>

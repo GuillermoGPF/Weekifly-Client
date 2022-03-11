@@ -5,9 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import FriendsList from '../components/FriendsList/FriendsList'
 import SearchFriends from './../components/SearchFriends/SearchFriends'
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner'
-import PlanMessage from '../components/PlanMessage/PlanMessage'
 import friendService from '../services/users.service'
-import { PlanMessageContext } from '../context/planMessage.context'
 
 
 const Users = () => {
@@ -45,7 +43,6 @@ const Users = () => {
                 <SearchFriends filterFriends={filterFriends} />
                 {!friends.length ? <LoadingSpinner /> : <FriendsList friends={friends} />}
             </Container>
-            <PlanMessage />
             <Footer />
         </>
     )

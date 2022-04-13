@@ -1,13 +1,17 @@
 import { Col, Container, Row } from 'react-bootstrap'
+import { useContext } from 'react'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
+import { ThemeContext } from '../context/theme.context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRocket } from '@fortawesome/free-solid-svg-icons'
 
 
 const Settings = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext)
+
     return (
-        <>
+        <div className={theme}>
             <Navbar />
             <Container className='notFound'>
                 <Row>
@@ -19,7 +23,7 @@ const Settings = () => {
                 <FontAwesomeIcon className='rocket' icon={faRocket} />
             </Container>
             <Footer />
-        </>
+        </div>
     )
 }
 

@@ -1,14 +1,18 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
 import Brand from '../components/Brand/Brand'
 import Signup from '../components/Signup/Signup'
+import { ThemeContext } from '../context/theme.context'
 
 
 const SignupPage = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext)
+
     return (
-        <div className='home'>
+        <div className={'home ' + theme}>
             <Container>
-                <Row className='d-flex justify-content-center align-items-center'>
+                <Row className='align-items-center'>
                     <Col md={6}>
                         <Brand></Brand>
                         <div className='avatars'>

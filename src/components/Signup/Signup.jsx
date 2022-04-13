@@ -3,10 +3,12 @@ import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import authService from '../../services/auth.service'
 import { MessageContext } from '../../context/userMessage.context'
+import { ThemeContext } from '../../context/theme.context'
 
 
 const Signup = () => {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     const [signupForm, setSignupForm] = useState({
         username: '',
@@ -38,7 +40,7 @@ const Signup = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form className={'forms ' + theme} onSubmit={handleSubmit}>
             <p>Para crearte una cuenta</p>
             <Form.Group>
                 <Form.Label>Nombre de Usuario</Form.Label>

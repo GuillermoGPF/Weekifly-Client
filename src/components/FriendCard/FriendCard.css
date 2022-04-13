@@ -3,19 +3,19 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    padding: 1.2em;
+    border: 2px solid #ff6347;
+    border-radius: 0 5em 0 5em;
     cursor: pointer;
-    border-left: 5px solid #ff6347;
-}
-
-.friend .h5 {
-    font-weight: 600;
-    color: grey;
-    text-align: center;
 }
 
 .friend img {
     width: 5em;
     height: 5em;
     border-radius: 50%;
+}
+
+.friend:hover,
+.friend:focus {
+    border-color: #b14634;
 }

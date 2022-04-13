@@ -1,8 +1,9 @@
 import { Navbar as NavigationBar, Nav, Button, Modal } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import PlanForm from '../PlanForm/PlanForm'
 import planService from '../../services/plans.service'
+import { ThemeContext } from '../../context/theme.context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faIcons, faPlus, faUsers, faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
 import './Footer.css'
@@ -10,8 +11,8 @@ import './Footer.css'
 
 const Footer = () => {
     const [plans, setPlans] = useState([])
-
     const [show, setShow] = useState(false)
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     useEffect(() => loadPlans(), [])
 
@@ -28,14 +29,14 @@ const Footer = () => {
     return (
         <>
             <NavigationBar>
-                <Nav className='footer'>
+                <Nav className={'footer ' + theme}>
                     <NavLink to='/inicio' className={({ isActive }) => isActive ? 'selected' : ''}>
-                        <FontAwesomeIcon icon={faHouse} /><p>Home</p>
+                        <FontAwesomeIcon icon={faHouse} /><p>Inicio</p>
                     </NavLink>
                     <NavLink to='/planes' className={({ isActive }) => isActive ? 'selected' : ''}>
                         <FontAwesomeIcon icon={faIcons} /><p>Planes</p>
                     </NavLink>
-                    <NavLink className='addPlan' to='' onClick={handleShow}>
+                    <NavLink className={'addPlan ' + theme} to='' onClick={handleShow}>
                         <FontAwesomeIcon icon={faPlus} /><p>Planear</p>
                     </NavLink>
                     <NavLink to='/amigos' className={({ isActive }) => isActive ? 'selected' : ''}>

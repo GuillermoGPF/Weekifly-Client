@@ -4,11 +4,13 @@ import { useNavigate } from 'react-router-dom'
 import authService from '../../services/auth.service'
 import { AuthContext } from '../../context/auth.context'
 import { MessageContext } from '../../context/userMessage.context'
+import { ThemeContext } from '../../context/theme.context'
 
 
 const Login = () => {
     const { setShowMessage, setMessageInfo } = useContext(MessageContext)
     const { storeToken, authenticateUser } = useContext(AuthContext)
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     const [loginForm, setLoginForm] = useState({
         password: '',
@@ -40,7 +42,7 @@ const Login = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form className={'forms ' + theme} onSubmit={handleSubmit}>
             <p>Para iniciar sesión</p>
             <Form.Group>
                 <Form.Label>Email</Form.Label>

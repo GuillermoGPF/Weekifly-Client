@@ -8,12 +8,14 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import planService from '../services/plans.service'
 import uploadService from '../services/upload.service'
 import { MessageContext } from '../context/userMessage.context'
+import { ThemeContext } from '../context/theme.context'
 
 
 const EditPlan = () => {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
     const [loadingImage, setLoadingImage] = useState(false)
     const navigate = useNavigate()
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     const { plan_id } = useParams()
     const [planEditForm, setplanEditForm] = useState({})
@@ -68,7 +70,7 @@ const EditPlan = () => {
 
 
     return (
-        <>
+        <div className={theme}>
             <Navbar />
             <Container className='hero'>
                 <Row className='justify-content-center'>
@@ -105,7 +107,7 @@ const EditPlan = () => {
                 </Row>
             </Container>
             <Footer />
-        </>
+        </div>
     )
 }
 

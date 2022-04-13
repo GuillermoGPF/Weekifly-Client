@@ -39,17 +39,23 @@
     top: 100px;
 }
 
-.menu a {
+.menu a,
+.nav a {
     color: #ff6347;
     text-align: center;
     text-decoration: none;
-    margin: 1em 1.5em;
     font-size: 1.2em;
     transition: all 500ms ease-in-out;
 }
 
+.menu a {
+    margin: 1em 1.5em;
+}
+
 .menu a:hover,
-.menu a.selected  {
+.menu a.selected,
+.nav a:hover,
+.nav a.selected {
     color: #b14634;
 }
 
@@ -58,13 +64,24 @@
     padding: 1em;
 }
 
+#camera {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .nav {
         padding: 0.6em 0;
     }
 
-    .buttons,
-    .menu {
+    .menu,
+    .buttons a,
+    .buttons .button {
         display: none;
+    }
+
+    #logout,
+    #camera,
+    #theme {
+        display: block;
     }
 }

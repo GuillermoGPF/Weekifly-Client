@@ -5,15 +5,18 @@ import Brand from '../Brand/Brand'
 import PlanForm from '../PlanForm/PlanForm'
 import planService from '../../services/plans.service'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTh, faHouse, faIcons, faPlus, faUsers, faUserAstronaut, faCog } from '@fortawesome/free-solid-svg-icons'
+import { faTh, faHouse, faIcons, faPlus, 
+        faUsers, faUserAstronaut, faPowerOff, faCameraRetro } from '@fortawesome/free-solid-svg-icons'
 import { AuthContext } from '../../context/auth.context'
+import { ThemeContext } from '../../context/theme.context'
 import './Navbar.css'
 
 
 const Navbar = () => {
     const [isActive, setActive] = useState(false)
     const [plans, setPlans] = useState([])
-    const { user } = useContext(AuthContext)
+    const { logOutUser, user } = useContext(AuthContext)
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     const [show, setShow] = useState(false)
 
@@ -34,14 +37,18 @@ const Navbar = () => {
     }
 
     return (
-        <>
+        <div className={'navigation ' + theme}>
             <NavigationBar>
-                <Nav className='nav'>
+                <Nav className={'nav ' + theme}>
                     <NavLink to='/inicio'>
                         <Brand />
                     </NavLink>
+                    <NavLink id='camera' to='/' className={({ isActive }) => isActive ? 'selected' : ''}>
+                        <FontAwesomeIcon icon={faCameraRetro} />
+                        <p>Cámara</p>
+                    </NavLink>
                     <div className='buttons'>
-                        <NavLink to='/perfil' className='contact'>
+                        <NavLink to='/perfil' className={'contact ' + theme}>
                             <img src={user.avatar} alt={user.username} />
                             <span className='user-name'>{user.username}</span>
                         </NavLink>
@@ -49,13 +56,21 @@ const Navbar = () => {
                             <FontAwesomeIcon icon={faTh} />
                             <p>Menú</p>
                         </Button>
+                        <Button id='logout' className='button' onClick={logOutUser}>
+                            <FontAwesomeIcon icon={faPowerOff} />
+                            <p>Salir</p>
+                        </Button>
+                        <Button id='theme' className='button' onClick={toggleTheme}>
+                            {theme === 'light' ? '🌜' : '🟡'}
+                            <p>Modo</p>
+                        </Button>
                     </div>
                 </Nav>
             </NavigationBar>
 
-            <div className={`menu ${isActive ? 'open' : ''}`}>
+            <div className={`menu ${isActive ? 'open' : ''} ` + theme}>
                 <NavLink to='/inicio' className={({ isActive }) => isActive ? 'selected' : ''}>
-                    <FontAwesomeIcon icon={faHouse} /><p>Home</p>
+                    <FontAwesomeIcon icon={faHouse} /><p>Inicio</p>
                 </NavLink>
                 <NavLink to='/planes' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faIcons} /><p>Planes</p>
@@ -69,18 +84,18 @@ const Navbar = () => {
                 <NavLink to='/perfil' className={({ isActive }) => isActive ? 'selected' : ''}>
                     <FontAwesomeIcon icon={faUserAstronaut} /><p>Perfil</p>
                 </NavLink>
-                <NavLink to='/ajustes' className={({ isActive }) => isActive ? 'selected' : ''}>
-                    <FontAwesomeIcon icon={faCog} /><p>Ajustes</p>
+                <NavLink to='/' className={({ isActive }) => isActive ? 'selected' : ''}>
+                    <FontAwesomeIcon icon={faCameraRetro} /><p>Cámara</p>
                 </NavLink>
             </div>
     
-            <Modal show={show} onHide={handleClose} centered>
-                <Modal.Header closeButton></Modal.Header>
+            <Modal contentClassName={theme} show={show} onHide={handleClose} centered>
+                <Modal.Header closeButton={theme}></Modal.Header>
                 <Modal.Body>
                     <PlanForm closeModal={handleClose} refreshPlans={loadPlans} />
                 </Modal.Body>
             </Modal>
-        </>
+        </div>
     )
 }
 

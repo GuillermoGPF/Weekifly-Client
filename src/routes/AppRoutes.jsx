@@ -8,6 +8,7 @@ import SignupPage from '../pages/SignupPage'
 import Users from '../pages/Users'
 import PlanDetails from '../pages/PlanDetails'
 import UserDetails from '../pages/UserDetails'
+import AdsDetails from '../pages/AdsDetails'
 import NotFound from '../pages/NotFound'
 import EditPlan from '../pages/EditPlan'
 import PrivateRoute from '../routes/PrivateRoute'
@@ -42,8 +43,11 @@ const AppRoutes = () => {
             <Route path='/detalles-amigo/:user_id' element={<PrivateRoute />}>
                 <Route path='' element={<UserDetails />} />
             </Route>
-            <Route path='/404' element={<PrivateRoute />}>
-                <Route path='' element={<NotFound />} />
+            <Route path='/detalles-anuncio/:ad_id' element={<PrivateRoute />}>
+                <Route path='' element={<AdsDetails />} />
+            </Route>
+            <Route path='*' element={<PrivateRoute />}>
+                <Route path='*' element={<NotFound />} />
             </Route>
         </Routes>
     )

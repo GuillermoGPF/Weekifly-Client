@@ -1,6 +1,8 @@
 /* Generals */
 .App {
     font-family: 'Poppins', 'calibri', sans-serif;
+    width: 100%;
+    height: 100vh;
 }
 
 html,
@@ -25,7 +27,8 @@ a {
     text-decoration: none;
 }
 
-h2 {
+h2,
+h4 {
     color: grey;
     font-weight: 600;
 }
@@ -34,6 +37,12 @@ h3 {
     font-size: 0.7em;
     color: grey;
     font-weight: 600;
+}
+
+.h5 {
+    font-weight: 600;
+    color: grey;
+    text-align: center;
 }
 
 p {
@@ -55,6 +64,7 @@ button {
     display: grid;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 .home a {
@@ -74,12 +84,22 @@ button {
     color: #b14634;
 }
 
-.home .container {
-    padding: 2em;
+.hero {
+    margin: 7em auto;
 }
 
-.hero {
-    margin: 5em auto;
+.hero .plan:hover {
+    transform: scale(1.1);
+}
+
+.hero .homeCard .plan {
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .hero .plan:hover {
+        transform: scale(1);
+    }
 }
 
 
@@ -101,6 +121,7 @@ form p {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8em;
     margin-bottom: 1em;
+    font-weight: 600;
     border-radius: 0;
     outline: none;
     box-shadow: none!important;
@@ -121,9 +142,41 @@ label {
     font-weight: 600;
 }
 
+.formSearch {
+    width: 50%;
+    color: #4EACCE;
+    border-radius: 50px;
+    background-color: #fff;
+    border: solid 2px #4EACCE;
+    padding: 0 1em;
+    margin: 1em auto;
+}
+
+.formSearch input {
+    width: 90%;
+    padding: 0.6em;
+    border: none;
+    color: grey;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .formSearch  {
+        width: 90%;
+    }
+
+    .avatar {
+        margin: 1em 0.9em;
+    }
+
+    .avatar img {
+        height: 80px;
+    }
+}
+
 
 /* Buttons */
-button[type="submit"] {
+button[type='submit'] {
     width: 100%;
 }
 
@@ -185,7 +238,6 @@ a p {
     background: none;
     color: #ff6347;
     font-size: 2.5em;
-    margin: 0;
 }
 
 .back:hover,
@@ -208,11 +260,27 @@ a p {
     margin: 0;
 }
 
-.buttonsPlans {
+.buttonsPlans,
+.buttonsAds {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 2em auto;
+}
+
+.bttn {
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: #ff6347;
+    padding: 0.5em 1em;
+    border: solid 2px #ff6347;
+    transition: all 500ms ease-in-out;
+}
+
+.bttn:hover {
+    background-color: #ff6347;
+    color: #fff;
+    border: solid 2px #ff6347;
 }
 
 /* Avatars */
@@ -249,7 +317,7 @@ a p {
     background-color: #fff;
     border: 2px solid #ff6347;
     border-radius: 0 2em 0 2em;
-    color: grey;
+    color: grey!important;
     font-weight: 800;
     cursor: pointer;
     display: flex;
@@ -270,48 +338,16 @@ a p {
     color: #b14634;
 }
 
-/* Form */
-.formSearch {
-    width: 50%;
-    color: #4EACCE;
-    border-radius: 50px;
-    background-color: #fff;
-    border: solid 2px #4EACCE;
-    padding: 0 1em;
-    margin: 1em auto;
-}
-
-.formSearch input {
-    width: 90%;
-    padding: 0.6em;
-    border: none;
-    color: grey;
-    outline: none;
-}
-
-@media (max-width: 768px) {
-    .formSearch  {
-        width: 90%;
-    }
-
-    .avatar {
-        margin: 1em 0.9em;
-    }
-
-    .avatar img {
-        height: 80px;
-    }
-}
-
 
 /* Cards */
 .card {
+    max-height: auto;
     margin: 1em auto;
     border: none;
     border-radius: 1em;
     overflow: hidden;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
-    background-color: #fff;
+    /* background-color: #fff; */
     transition: all 500ms ease-in-out;
 }
 
@@ -321,9 +357,34 @@ a p {
     object-fit: cover;
 }
 
+.create-ad {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #4EACCE;
+    transition: all 600ms ease-in-out;
+}
+
+.create-ad:hover {
+    color: #418eaa;
+}
+
+.advert {
+    position: relative;
+    height: 200px;
+    padding: 1em;
+}
+
+.advert svg {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    font-size: 2em;
+    color: #4EACCE;
+}
+
 .homeCard {
     overflow: auto;
-    height: 390px;
+    max-height: 500px;
 }
 
 .homeCard::-webkit-scrollbar {
@@ -331,26 +392,29 @@ a p {
     height: 0;
 }
 
+.profile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.2em;
+    border-radius: 1em;
+}
+
 .profile img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    margin-bottom: 1em;
 }
 
-.profile h3 {
-    margin-top: 1em;
-    margin-bottom: 0;
-}
-
-.profile,
-.plans {
+.plans,
+.ads {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.plans img {
+.plans img,
+.ads img {
     width: 80%;
     text-align: center;
     margin-top: 1em;
@@ -367,6 +431,8 @@ a p {
     }
 }
 
+
+/* Not Found */
 .notFound {
     width: 100%;
     height: 90vh;
@@ -396,4 +462,76 @@ a p {
 @keyframes launch {
     0%   {bottom: -100px;}
     100% {bottom: 100%; left: 60%;}
+}
+
+
+/* Chat */
+.chat {
+    width: 50%;
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow: auto;
+    border: 2px solid black;
+}
+
+
+/* Dark / Light Mode */
+.nav.dark,
+.footer.dark,
+.menu.dark,
+.toast.dark {
+    background-color: #000;
+    transition: all 500ms ease-in-out;
+}
+
+.card.dark {
+    background-color: #373d48;
+    transition: all 500ms ease-in-out;
+}
+
+.light,
+.App.light {
+    background-color: #f5f5f5;
+    transition: all 500ms ease-in-out;
+}
+
+.dark,
+.App.dark,
+.contact.dark,
+.addPlan.dark,
+.formSearch.dark,
+input.dark, 
+.form.dark,
+.modal-content.dark {
+    background-color: #282c34;
+    transition: all 500ms ease-in-out;
+}
+
+.card.dark .form-control,
+.form.dark .form-control,
+.forms.dark .form-control,
+.card.dark p {
+    color: #fff;
+    transition: all 500ms ease-in-out;
+}
+
+.friend.dark,
+.plan.dark {
+    background-color: #1d2025;
+    transition: all 500ms ease-in-out;
+}
+
+.card.light,
+.friend.light,
+.plan.light,
+.contact.light,
+.addPlan.light,
+.formSearch.light,
+input.light, 
+.menu.light, 
+.form.light,
+.toast.light,
+.modal-content.light {
+    background-color: #fff;
+    transition: all 500ms ease-in-out;
 }

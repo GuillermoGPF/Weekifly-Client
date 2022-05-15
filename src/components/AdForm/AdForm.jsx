@@ -9,7 +9,7 @@ import { ThemeContext } from '../../context/theme.context'
 
 const AdForm = ({ closeModal, refreshAd }) => {
     const { setShowMessage, setMessageInfo } = useContext(MessageContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     const [AdData, setAdData] = useState({
         name: '',

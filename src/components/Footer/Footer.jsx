@@ -12,7 +12,7 @@ import './Footer.css'
 const Footer = () => {
     const [plans, setPlans] = useState([])
     const [show, setShow] = useState(false)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     useEffect(() => loadPlans(), [])
 

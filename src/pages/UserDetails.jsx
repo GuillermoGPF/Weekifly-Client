@@ -17,7 +17,7 @@ import { ThemeContext } from '../context/theme.context'
 function UserDetails() {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
     const { user } = useContext(AuthContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
     const [userDetails, setUserDetails] = useState({})
     const [plans, setPlans] = useState([])
     const { user_id } = useParams()

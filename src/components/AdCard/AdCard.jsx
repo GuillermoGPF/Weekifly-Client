@@ -5,7 +5,7 @@ import './AdCard.css'
 
 
 const AdCard = ({ name, image, description, _id }) => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     return (
         <Link to={`/detalles-anuncio/${_id}`}>

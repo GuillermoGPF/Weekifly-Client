@@ -12,7 +12,7 @@ function PrivateRoute() {
     }
 
     if (!isLoggedIn) {
-        return <Navigate to='/' />
+        return <Navigate to='/inicio' />
     }
 
     if (user) {

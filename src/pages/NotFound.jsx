@@ -8,7 +8,7 @@ import { faRocket } from '@fortawesome/free-solid-svg-icons'
 
 
 const Settings = () => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     return (
         <div className={theme}>

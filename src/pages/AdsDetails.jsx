@@ -14,7 +14,7 @@ import { ThemeContext } from '../context/theme.context'
 function AdsDetails() {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
     const { user } = useContext(AuthContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
     const [adsDetails, setAdsDetails] = useState({})
     const { ad_id } = useParams()
 

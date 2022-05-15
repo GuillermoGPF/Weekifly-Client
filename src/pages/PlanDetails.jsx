@@ -14,7 +14,7 @@ import { ThemeContext } from '../context/theme.context'
 function PlanDetails() {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
     const { user } = useContext(AuthContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
     const [plansDetails, setPlansDetails] = useState({})
     const { plan_id } = useParams()
     const navigate = useNavigate()

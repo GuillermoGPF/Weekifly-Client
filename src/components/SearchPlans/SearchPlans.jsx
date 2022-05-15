@@ -6,7 +6,7 @@ import { useContext } from 'react'
 
 
 const SearchPlans = ({ filterPlans }) => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     function handleInput(e) {
         filterPlans(e.target.value)

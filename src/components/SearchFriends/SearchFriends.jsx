@@ -6,7 +6,7 @@ import { useContext } from 'react'
 
 
 const SearchFriends = ({ filterFriends }) => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     function handleInput(e) {
         filterFriends(e.target.value)

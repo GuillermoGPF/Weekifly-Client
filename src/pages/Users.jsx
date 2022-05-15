@@ -12,7 +12,7 @@ import { ThemeContext } from '../context/theme.context'
 const Users = () => {
     const [friends, setFriends] = useState([])
     const [friendsCopy, setCopy] = useState([])
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     useEffect(() => loadFriends(), [])
 

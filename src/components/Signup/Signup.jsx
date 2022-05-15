@@ -8,7 +8,7 @@ import { ThemeContext } from '../../context/theme.context'
 
 const Signup = () => {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     const [signupForm, setSignupForm] = useState({
         username: '',

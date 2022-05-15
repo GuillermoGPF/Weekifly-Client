@@ -61,7 +61,7 @@ const Navbar = () => {
                             <p>Salir</p>
                         </Button>
                         <Button id='theme' className='button' onClick={toggleTheme}>
-                            {theme === 'light' ? '🌜' : '🟡'}
+                            {theme === 'dark' ? '🟡' : '🌜'}
                             <p>Modo</p>
                         </Button>
                     </div>

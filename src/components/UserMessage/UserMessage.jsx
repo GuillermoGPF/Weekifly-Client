@@ -7,7 +7,7 @@ import './UserMessage.css'
 
 const UserMessage = () => {
     const { setShowMessage, showMessage, messageInfo } = useContext(MessageContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     return (
         <Toast className={theme} onClose={() => setShowMessage(false)} show={showMessage} delay={5000} autohide>

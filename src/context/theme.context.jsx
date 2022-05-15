@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react'
 const ThemeContext = createContext()
 
 function ThemeProviderWrapper(props) {
-    let [theme, setTheme] = useState('light')
+    let [theme, setTheme] = useState('dark')
 
     if (localStorage) {
         theme = localStorage.getItem('theme')

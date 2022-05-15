@@ -14,7 +14,7 @@ import { ThemeContext } from '../context/theme.context'
 
 const Profile = () => {
     const { user } = useContext(AuthContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
     const [plans, setPlans] = useState([])
 
     useEffect(() => loadPlans(), [])

@@ -7,14 +7,14 @@ import { ThemeContext } from '../context/theme.context'
 
 
 const SignupPage = () => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     return (
         <div className={'home ' + theme}>
             <Container>
                 <Row className='align-items-center'>
                     <Col md={6}>
-                        <Brand></Brand>
+                        <Brand />
                         <div className='avatars'>
                             <div className='avatar'>
                                 <img src='./../img/avatar-1.svg'></img>

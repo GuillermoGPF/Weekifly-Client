@@ -6,7 +6,7 @@ import './FriendCard.css'
 
 
 const FriendCard = ({ username, avatar, _id }) => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     return (
         <Link to={`/detalles-amigo/${_id}`}>

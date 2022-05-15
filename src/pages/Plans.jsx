@@ -12,7 +12,7 @@ import { ThemeContext } from '../context/theme.context'
 const Plans = () => {
     const [plans, setPlans] = useState([])
     const [plansCopy, setCopy] = useState([])
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     useEffect(() => loadPlans(), [])
 

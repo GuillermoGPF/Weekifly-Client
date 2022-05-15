@@ -15,7 +15,7 @@ import { MessageContext } from '../context/userMessage.context'
 const Settings = () => {
     const { user, setUser } = useContext(AuthContext)
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
     const [loadingImage, setLoadingImage] = useState(false)
     const [show, setShow] = useState(false)
     const navigate = useNavigate()

@@ -24,7 +24,7 @@ const Home = ({ name, image, description, _id }) => {
     const [plans, setPlans] = useState([])
     const [ads, setAds] = useState([])
     const [show, setShow] = useState(false)
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
   
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)

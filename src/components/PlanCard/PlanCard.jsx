@@ -6,7 +6,7 @@ import './PlanCard.css'
 
 
 const PlanCard = ({ name, image, description, _id }) => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     return (
         <Link to={`/detalles-plan/${_id}`}>

@@ -5,7 +5,7 @@ import { ThemeContext } from './context/theme.context'
 import { useContext } from 'react'
 
 function App() {
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     return (
         <div className={'App ' + theme}>

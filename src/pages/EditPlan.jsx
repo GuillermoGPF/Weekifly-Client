@@ -15,7 +15,7 @@ const EditPlan = () => {
     const { setMessageInfo, setShowMessage } = useContext(MessageContext)
     const [loadingImage, setLoadingImage] = useState(false)
     const navigate = useNavigate()
-    const { theme, toggleTheme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext)
 
     const { plan_id } = useParams()
     const [planEditForm, setplanEditForm] = useState({})
